@@ -1,9 +1,9 @@
 === Shibboleth ===
-Contributors: willnorris, mitchoyoshitaka
-Tags: shibboleth, authentication, login, saml
+Contributors: bshelton229, jnweaver, willnorris, mitchoyoshitaka
+Tags: shibboleth, authentication, login, saml, uw
 Requires at least: 2.8
-Tested up to: 3.0.1
-Stable tag: 1.4
+Tested up to: 3.8.1
+Stable tag: 0.0.1
 
 Allows WordPress to externalize user authentication and account creation to a
 Shibboleth Service Provider.
@@ -12,7 +12,7 @@ Shibboleth Service Provider.
 
 This plugin is designed to support integrating your WordPress or WordPress MU
 blog into your existing identity management infrastructure using a
-[Shibboleth][] Service Provider.  
+[Shibboleth][] Service Provider.
 
 WordPress can be configure so that all standard login requests will be sent to
 your configured Shibboleth Identity Provider or Discovery Service.  Upon
@@ -20,7 +20,7 @@ successful authentication, a new WordPress account will be automatically
 provisioned for the user if one does not already exist.  User attributes
 (username, first name, last name, display name, nickname, and email address)
 can be synchronized with your enterprise's system of record each time the user
-logs into WordPress.  
+logs into WordPress.
 
 Finally, the user's role within WordPress can be automatically set (and
 continually updated) based on any attribute Shibboleth provides.  For example,
@@ -65,7 +65,7 @@ from the Shibboleth settings page, found under "Site Admin".
 
 = What is Shibboleth? =
 
-From [the Shibboleth homepage][]: 
+From [the Shibboleth homepage][]:
 
 > The Shibboleth System is a standards based, open source software package for
 > web single sign-on across or within organizational boundaries. It allows
@@ -109,7 +109,7 @@ have to make that call as to what is most appropriate.
  - new hooks for developers to override the default user role mapping controls
  - now applies `sanitize_name()` to the Shibboleth user's `nicename` column
 
-= version 1.3 (2009-10-02) = 
+= version 1.3 (2009-10-02) =
  - required WordPress version bumped to 2.8
  - much cleaner integration with WordPress authentication system
  - individual user profile fields can be designated as managed by Shibboleth

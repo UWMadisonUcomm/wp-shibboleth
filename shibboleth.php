@@ -1,11 +1,10 @@
 <?php
 /*
- Plugin Name: Shibboleth
- Plugin URI: http://wordpress.org/extend/plugins/shibboleth
- Description: Easily externalize user authentication to a <a href="http://shibboleth.internet2.edu">Shibboleth</a> Service Provider
- Author: Will Norris, mitcho (Michael 芳貴 Erlewine)
- Version: 1.4
- License: Apache 2 (http://www.apache.org/licenses/LICENSE-2.0.html)
+ Plugin Name: UW Shibboleth
+ Plugin URI: http://wordpress.org/extend/plugins/wp-shibboleth-uw
+ Description: Handle user authentication via UW-Madison's <a href="http://shibboleth.internet2.edu">Shibboleth</a> Service Provider. Forked from the original <a href="http://wordpress.org/extend/plugins/">shibboleth plugin</a> by Will Norris and mitcho (Michael 芳貴 Erlewine)
+ Author: Bryan Shelton, Nick Weaver
+ Version: 0.0.1
  */
 
 define ( 'SHIBBOLETH_PLUGIN_REVISION', preg_replace( '/\$Rev: (.+) \$/', '\\1',
