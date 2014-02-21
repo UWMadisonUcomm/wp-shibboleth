@@ -467,6 +467,15 @@ function shibboleth_remove_htaccess() {
 }
 
 
+/**
+ *  Load CSS for styling the Login with Campus NetID link
+ **/
+function login_screen_css() {
+  wp_enqueue_style( 'login.css', plugins_url( '/css/login.css', __FILE__ ), '0.0.1' );
+}
+add_action( 'login_enqueue_scripts', 'login_screen_css' );
+
+
 /* Custom option functions to correctly use WPMU *_site_option functions when available. */
 function shibboleth_get_option($key, $default = false ) {
 	return function_exists('get_site_option') ? get_site_option($key, $default) : get_option($key, $default);

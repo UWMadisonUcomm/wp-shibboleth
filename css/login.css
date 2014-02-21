@@ -1,0 +1,36 @@
+#loginform {
+  position: relative;
+  padding-bottom: 10em;
+}
+#login form #shibboleth_login {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  margin: 2em 0;
+  padding-top: 2em;
+  border-top: 1px solid #EFEFEF;
+}
+
+#shibboleth_login a {
+  display: inline-block;
+  padding: 6px 16px 6px 8px;
+  background-color: #EFEFEF;
+  color: #343434;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(9, 9, 9, 0.1),0 1px 0 rgba(9, 9, 9, 0.15);
+  border: 1px solid #CCC;
+  border-radius: 3px;
+}
+#shibboleth_login a:hover {
+  color: #900;
+}
+#shibboleth_login a img {
+  height: 45px;
+  vertical-align: middle;
+}
+#shibboleth_login a span {
+  display: inline
+}
