@@ -262,13 +262,6 @@ function shibboleth_session_initiator_url($redirect = null) {
 function shibboleth_authenticate_user() {
 	$shib_headers = shibboleth_get_option('shibboleth_headers');
 
-	// ensure user is authorized to login
-	$user_role = shibboleth_get_user_role();
-
-	if ( empty($user_role) ) {
-		return new WP_Error('no_access', __('You do not have sufficient access.'));
-	}
-
 	$username = $_SERVER[$shib_headers['username']['name']];
 	$user = new WP_User($username);
 
@@ -281,6 +274,13 @@ function shibboleth_authenticate_user() {
 
 	// create account if new user
 	if ( !$user->ID ) {
+    // ensure user is authorized to login
+    $user_role = shibboleth_get_user_role();
+
+    if ( empty($user_role) ) {
+      return new WP_Error('no_access', __('You do not have sufficient access.'));
+    }
+
 		$user = shibboleth_create_new_user($username);
 	}
 
