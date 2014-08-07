@@ -1,0 +1,30 @@
+{
+  "name"        : "uwmadison-umark/wp-shibboleth",
+  "description" : "A fork of the official Wordpress Shibboleth plugin",
+  "authors"     : [
+    {
+      "name"    : "willnorris",
+      "role"    : "Original author"
+    },
+    {
+      "name"    : "mitchoyoshitaka",
+      "role"    : "Original author"
+    },
+    {
+      "name"    : "Bryan Shelton",
+      "email"   : "bryan@sheltonplace.com",
+      "homepage": "http://sheltonplace.com",
+      "role"    : "Contributor"
+    },
+    {
+      "name"    : "Nick Weaver",
+      "email"   : "jnweaver@wisc.edu",
+      "homepage": "http://umark.wisc.edu",
+      "role"    : "Contributor"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}
