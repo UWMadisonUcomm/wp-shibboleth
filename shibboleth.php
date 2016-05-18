@@ -438,7 +438,8 @@ add_filter( 'shibboleth_user_nicename', 'sanitize_title' );
  */
 function shibboleth_login_form() {
 	$login_url = add_query_arg('action', 'shibboleth');
-	echo '<p id="shibboleth_login"><a href="' . $login_url . '"><img src="' . plugins_url( '/img/uwcrest.png', __FILE__ ) . '" alt="" /> <span>' . __('Login with UW NetID', 'shibboleth') . '</span></a></p>';
+	// $login_url = remove_query_arg('reauth', $login_url);
+	echo '<p id="shibboleth_login"><a href="' . esc_url($login_url) . '"><img src="' . plugins_url( '/img/uwcrest.png', __FILE__ ) . '" alt="" /> <span>' . __('Login with UW NetID', 'shibboleth') . '</span></a></p>';
 }
 add_action('login_form', 'shibboleth_login_form');
 
