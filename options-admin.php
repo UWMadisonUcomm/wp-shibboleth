@@ -18,7 +18,7 @@ function shibboleth_admin_panels() {
 			__('Shibboleth', 'shibboleth'), 8, 'shibboleth-options', 'shibboleth_options_page' );
 	}
 
-	add_contextual_help($hookname, shibboleth_help_text());
+	// add_contextual_help($hookname, shibboleth_help_text());
 }
 
 
