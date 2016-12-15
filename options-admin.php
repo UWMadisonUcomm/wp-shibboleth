@@ -20,7 +20,7 @@ function shibboleth_admin_panels() {
 			'title' => 'Shibboleth Help',
 			'id' => 'shibboleth-help',
 			'content' => shibboleth_help_text(),
- +	));
+		));
 }
 
 /**
