@@ -28,7 +28,7 @@ function shibboleth_admin_footer_profile() {
 	if ( !empty($managed_fields) ) {
 		$selectors = join(',', array_map(function($a) {
 			return "#$a"; 
-		}), $managed_fields));
+		}, $managed_fields));
 
 		echo '
 		<script type="text/javascript">
