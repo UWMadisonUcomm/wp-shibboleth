@@ -14,7 +14,9 @@ add_action('admin_footer-user-edit.php', 'shibboleth_admin_footer_edit_user');
 function shibboleth_profile_personal_options() {
 	$user = wp_get_current_user();
 	if (get_user_meta($user->ID, 'shibboleth_account')) {
-		add_filter('show_password_fields', create_function('$v', 'return false;'));
+		add_filter('show_password_fields', function('$v') {
+			return false;
+		});
 
 		add_action('admin_footer-profile.php', 'shibboleth_admin_footer_profile');
 	}
@@ -24,7 +26,9 @@ function shibboleth_admin_footer_profile() {
 	$managed_fields = shibboleth_get_managed_user_fields();
 
 	if ( !empty($managed_fields) ) {
-		$selectors = join(',', array_map(create_function('$a', 'return "#$a";'), $managed_fields));
+		$selectors = join(',', array_map(function('$a') {
+			return "#$a"; 
+		}), $managed_fields));
 
 		echo '
 		<script type="text/javascript">
@@ -109,23 +113,33 @@ function shibboleth_personal_options_update() {
 		$managed = shibboleth_get_managed_user_fields();
 
 		if ( in_array('first_name', $managed) ) {
-			add_filter('pre_user_first_name', create_function('$n', 'return $GLOBALS["current_user"]->first_name;'));
+			add_filter('pre_user_first_name', function('$n') {
+				return $GLOBALS["current_user"]->first_name;
+			});
 		}
 
 		if ( in_array('last_name', $managed) ) {
-			add_filter('pre_user_last_name', create_function('$n', 'return $GLOBALS["current_user"]->last_name;'));
+			add_filter('pre_user_last_name', function('$n') {
+				return $GLOBALS["current_user"]->last_name;
+			});
 		}
 
 		if ( in_array('nickname', $managed) ) {
-			add_filter('pre_user_nickname', create_function('$n', 'return $GLOBALS["current_user"]->nickname;'));
+			add_filter('pre_user_nickname', function('$n') {
+				return $GLOBALS["current_user"]->nickname;
+			});
 		}
 
 		if ( in_array('display_name', $managed) ) {
-			add_filter('pre_user_display_name', create_function('$n', 'return $GLOBALS["current_user"]->display_name;'));
+			add_filter('pre_user_display_name', function('$n') {
+				return $GLOBALS["current_user"]->display_name;
+			});
 		}
 
 		if ( in_array('email', $managed) ) {
-			add_filter('pre_user_email', create_function('$e', 'return $GLOBALS["current_user"]->user_email;'));
+			add_filter('pre_user_email', function('$e') {
+				return $GLOBALS["current_user"]->user_email;
+			});
 		}
 	}
 }
