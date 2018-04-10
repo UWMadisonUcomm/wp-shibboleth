@@ -4,7 +4,7 @@
  Plugin URI: http://wordpress.org/extend/plugins/wp-shibboleth-uw
  Description: Handle user authentication via UW-Madison's <a href="http://shibboleth.internet2.edu">Shibboleth</a> Service Provider. Forked from the original <a href="http://wordpress.org/extend/plugins/">shibboleth plugin</a> by Will Norris and mitcho (Michael 芳貴 Erlewine)
  Author: Bryan Shelton, Nick Weaver
- Version: 2.0.0
+ Version: 2.0.1
  */
 
 define ( 'SHIBBOLETH_PLUGIN_REVISION', preg_replace( '/\$Rev: (.+) \$/', '\\1',

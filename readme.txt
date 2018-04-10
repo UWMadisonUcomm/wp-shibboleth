@@ -104,6 +104,9 @@ have to make that call as to what is most appropriate.
 
 == Changelog ==
 
+= version 2.0.1 (2018-04-10) =
+ - Fix syntax error
+
 = version 2.0.0 (2018-04-10) =
  - Restarting development as version 2.0.0
  - Replaces deprecated create_function calls with anonymous functions
