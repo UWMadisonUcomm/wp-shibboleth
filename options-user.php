@@ -14,7 +14,7 @@ add_action('admin_footer-user-edit.php', 'shibboleth_admin_footer_edit_user');
 function shibboleth_profile_personal_options() {
 	$user = wp_get_current_user();
 	if (get_user_meta($user->ID, 'shibboleth_account')) {
-		add_filter('show_password_fields', function('$v') {
+		add_filter('show_password_fields', function($v) {
 			return false;
 		});
 
@@ -26,7 +26,7 @@ function shibboleth_admin_footer_profile() {
 	$managed_fields = shibboleth_get_managed_user_fields();
 
 	if ( !empty($managed_fields) ) {
-		$selectors = join(',', array_map(function('$a') {
+		$selectors = join(',', array_map(function($a) {
 			return "#$a"; 
 		}), $managed_fields));
 
@@ -113,31 +113,31 @@ function shibboleth_personal_options_update() {
 		$managed = shibboleth_get_managed_user_fields();
 
 		if ( in_array('first_name', $managed) ) {
-			add_filter('pre_user_first_name', function('$n') {
+			add_filter('pre_user_first_name', function($n) {
 				return $GLOBALS["current_user"]->first_name;
 			});
 		}
 
 		if ( in_array('last_name', $managed) ) {
-			add_filter('pre_user_last_name', function('$n') {
+			add_filter('pre_user_last_name', function($n) {
 				return $GLOBALS["current_user"]->last_name;
 			});
 		}
 
 		if ( in_array('nickname', $managed) ) {
-			add_filter('pre_user_nickname', function('$n') {
+			add_filter('pre_user_nickname', function($n) {
 				return $GLOBALS["current_user"]->nickname;
 			});
 		}
 
 		if ( in_array('display_name', $managed) ) {
-			add_filter('pre_user_display_name', function('$n') {
+			add_filter('pre_user_display_name', function($n) {
 				return $GLOBALS["current_user"]->display_name;
 			});
 		}
 
 		if ( in_array('email', $managed) ) {
-			add_filter('pre_user_email', function('$e') {
+			add_filter('pre_user_email', function($e) {
 				return $GLOBALS["current_user"]->user_email;
 			});
 		}
