@@ -318,7 +318,6 @@ function shibboleth_create_new_user($user_login) {
 	if ( empty($user_login) ) return null;
 
 	// create account and flag as a shibboleth acount
-	require_once( ABSPATH . WPINC . '/registration.php' );
 	$user_id = wp_insert_user(array('user_login'=>$user_login));
 	$user = new WP_User($user_id);
 	update_user_meta($user->ID, 'shibboleth_account', true);
@@ -401,7 +400,6 @@ function shibboleth_get_managed_user_fields() {
  *       nickname, display_name, email
  */
 function shibboleth_update_user_data($user_id, $force_update = false) {
-	require_once( ABSPATH . WPINC . '/registration.php' );
 
 	$shib_headers = shibboleth_get_option('shibboleth_headers');
 
