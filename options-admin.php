@@ -109,8 +109,6 @@ function shibboleth_options_page() {
 
 	$shibboleth_plugin_path = apply_filters('shibboleth_plugin_path', plugins_url('shibboleth'));
 
-	screen_icon('shibboleth');
-
 ?>
 	<style type="text/css">
 		#icon-shibboleth { background: url("<?php echo $shibboleth_plugin_path . '/icon.png' ?>") no-repeat; height: 36px width: 36px; }
