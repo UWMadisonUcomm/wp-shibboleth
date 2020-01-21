@@ -104,6 +104,9 @@ have to make that call as to what is most appropriate.
 
 == Changelog ==
 
+= version 2.0.2 (2020-01-21) =
+ - Fix case bug in .htaccess insert that was breaking Apache 2.4 installs
+
 = version 2.0.1 (2018-04-10) =
  - Fix syntax error
 
