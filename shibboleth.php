@@ -459,7 +459,7 @@ add_action('login_form', 'shibboleth_login_form');
 function shibboleth_insert_htaccess() {
 	if ( got_mod_rewrite() ) {
 		$htaccess = get_home_path() . '.htaccess';
-		$rules = array('AuthType shibboleth', 'Require Shibboleth');
+		$rules = array('AuthType shibboleth', 'require shibboleth');
 		insert_with_markers($htaccess, 'Shibboleth', $rules);
 	}
 }
